@@ -1,0 +1,69 @@
+/* === Base color palette === */
+:root {
+  --bg-color: #f9f9fb;         /* background */
+  --text-color: #222;          /* main text */
+  --accent-color: #007acc;     /* links, highlights */
+  --accent-hover: #005b99;     /* link hover color */
+  --title-color: #111;         /* headings */
+  --font-body: "Inter", Arial, sans-serif;
+  --font-title: "Georgia", serif;
+}
+
+/* === Global reset & base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === Titles === */
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--title-color);
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-top: 1em;
+  text-align: center;
+}
+
+/* === Links === */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* === Misc === */
+p {
+  margin-bottom: 1em;
+}
+
+header, footer {
+  text-align: center;
+  margin: 2rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
