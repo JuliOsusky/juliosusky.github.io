@@ -58,13 +58,13 @@ detailsPanel.addEventListener("click", () => {
 
 
 // ----------------------------
-// Load content into Details
+// Load blog posts into Details
 // ----------------------------
 
-const links = document.querySelectorAll(".load-content");
+const contentLinks = document.querySelectorAll(".load-content");
 
 
-links.forEach(link => {
+contentLinks.forEach(link => {
 
     link.addEventListener("click", event => {
 
@@ -75,25 +75,52 @@ links.forEach(link => {
 
         fetch(file)
 
-        .then(response => response.text())
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error("File not found");
+
+            }
+
+            return response.text();
+
+        })
 
         .then(html => {
 
             detailsContent.innerHTML = html;
 
-            openDetails();
+            showDetails();
 
         })
 
-
-        .catch(() => {
+        .catch(error => {
 
             detailsContent.innerHTML = `
                 <h2>Error</h2>
-                <p>Content could not be loaded.</p>
+                <p>${error.message}</p>
             `;
 
         });
+
+    });
+
+});
+
+
+// ----------------------------
+// External menu links
+// ----------------------------
+
+const externalLinks = document.querySelectorAll(".external-link");
+
+
+externalLinks.forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        event.stopPropagation();
 
     });
 
