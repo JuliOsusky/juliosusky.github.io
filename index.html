@@ -1,22 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juli Osusky</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Juli Osusky</h1>
-  </header>
 
-  <p>Urbanist MSc., Spatial Designer, Researcher</p>
+<div class="layout">
 
-  <p>Check out my <a href="https://www.instagram.com/1osay_?igsh=Z21yczBwbDdqYTEz">instagram</a> or <a href="contact.html">get in touch</a>.</p>
+    <!-- PERSON -->
 
-  <footer>
-    © 2025 Juli Osusky
-  </footer>
+    <aside id="person-panel" class="panel">
+
+        <header class="panel-header">
+            <h2>Person</h2>
+        </header>
+
+        <div class="panel-content">
+
+            <h3>Your Name</h3>
+
+            <p>
+                Architect, researcher and designer.
+            </p>
+
+            <p>
+                This column contains your introduction and personal information.
+            </p>
+
+            <hr>
+
+            <h4>Fields</h4>
+
+            <ul>
+                <li>Architecture</li>
+                <li>Urbanism</li>
+                <li>Research</li>
+            </ul>
+
+        </div>
+
+    </aside>
+
+
+    <!-- WORKS -->
+
+    <aside id="works-panel" class="panel">
+
+        <header class="panel-header">
+            <h2>Works</h2>
+        </header>
+
+        <div class="panel-content">
+
+            <nav>
+
+                <h3>Navigation</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#" class="load-content"
+                           data-file="posts/sample-post.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="load-content"
+                           data-file="posts/sample-post.html">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="load-content"
+                           data-file="posts/sample-post.html">
+                            Publications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="load-content"
+                           data-file="posts/sample-post.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <hr>
+
+            <h3>Blog</h3>
+
+            <article>
+
+                <h4>
+
+                    <a href="#"
+                       class="load-content"
+                       data-file="posts/sample-post.html">
+
+                        Sample Blog Post
+
+                    </a>
+
+                </h4>
+
+                <p>
+                    First example entry.
+                </p>
+
+            </article>
+
+        </div>
+
+    </aside>
+
+
+    <!-- DETAILS -->
+
+    <main id="details-panel" class="panel">
+
+        <header class="panel-header">
+            <h2>Details</h2>
+        </header>
+
+        <div id="details-content" class="panel-content">
+
+            <h2>Welcome</h2>
+
+            <p>
+                Select a page or blog post from the Works column.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
