@@ -56,47 +56,60 @@
             <h2>Works</h2>
         </header>
 
-        <div class="panel-content">
 
-            <!-- MENU -->
-
-            <nav>
-
-                <h3>Menu</h3>
-
-                <ul>    
-
-                    <li>
-                        <a href="https://example.com" class="external-link">
-                            External Site
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://example.com/projects" class="external-link">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://example.com/contact" class="external-link">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
+    <div class="panel-content">
 
 
-            <hr>
+        <!-- MENU -->
+
+        <nav>
+
+            <h3>Menu</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#"
+                       class="load-content"
+                       data-file="pages/home.html">
+                        Home
+                    </a>
+                </li>
 
 
-            <!-- BLOG -->
+                <li>
+                    <a href="#"
+                       class="load-content"
+                       data-file="pages/projects.html">
+                        Projects
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#"
+                       class="load-content"
+                       data-file="pages/contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+        
+        <hr>
+
+
+        <!-- BLOG -->
+
+        <section>
 
             <h3>Blog</h3>
 
-            <ul>
+            <ul id="blog-list">
+
+                <!-- wird später aus JSON gefüllt -->
 
                 <li>
                     <a href="#"
@@ -106,20 +119,13 @@
                     </a>
                 </li>
 
-
-                <li>
-                    <a href="#"
-                       class="load-content"
-                       data-file="posts/second-post.html">
-                        Second Blog Post
-                    </a>
-                </li>
-
             </ul>
 
-        </div>
+        </section>
 
-    </aside>
+    </div>
+
+</aside>
 
 
     <!-- DETAILS -->
