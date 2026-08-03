@@ -8,53 +8,50 @@ const detailsContent = document.getElementById("details-content");
 
 
 // ----------------------------
-// Layout switching
+// Panel states
 // ----------------------------
 
-function openPerson() {
+function showPerson() {
 
     layout.classList.remove("details-active");
 
 }
 
 
-function openDetails() {
+function showDetails() {
 
     layout.classList.add("details-active");
 
 }
 
 
-// Default state
+// Start
 
-openPerson();
+showPerson();
 
 
-// Person click
+// Panel clicks
 
 personPanel.addEventListener("click", () => {
 
-    openPerson();
+    showPerson();
 
 });
 
-
-// Works click -> open Details
 
 worksPanel.addEventListener("click", () => {
 
-    openDetails();
+    showDetails();
 
 });
 
-
-// Details click
 
 detailsPanel.addEventListener("click", () => {
 
-    openDetails();
+    showDetails();
 
 });
+
 
 
 // ----------------------------
