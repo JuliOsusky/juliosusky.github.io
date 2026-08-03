@@ -16,13 +16,39 @@ body {
 
 }
 
+
+/* ------------------------- */
+/* Panel Layout States */
+/* ------------------------- */
+
+
+/* Default state */
+
 .layout {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
 
     height: 100vh;
+
+}
+
+
+/* Details opened */
+
+.layout.details-active {
+
+    grid-template-columns: 1fr 1fr 3fr;
+
+}
+
+
+/* Works stays fixed */
+
+#works-panel {
+
+    min-width: 250px;
 
 }
 
