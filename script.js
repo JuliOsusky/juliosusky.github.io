@@ -2,6 +2,7 @@ const layout = document.querySelector(".layout");
 
 
 const personPanel = document.getElementById("person-panel");
+const worksPanel = document.getElementById("works-panel");
 const detailsPanel = document.getElementById("details-panel");
 
 const detailsContent = document.getElementById("details-content");
@@ -44,6 +45,14 @@ personPanel.addEventListener("click", () => {
 // Klick auf Details
 
 detailsPanel.addEventListener("click", () => {
+
+    openDetails();
+
+});
+
+// Klick auf Works
+
+worksPanel.addEventListener("click", () => {
 
     openDetails();
 
