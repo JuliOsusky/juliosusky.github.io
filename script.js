@@ -58,34 +58,26 @@ detailsPanel.addEventListener("click", () => {
 
 
 // ----------------------------
-// Load blog posts into Details
+// Load internal content
 // ----------------------------
 
-const contentLinks = document.querySelectorAll(".load-content");
+function loadContent(file) {
 
 
-contentLinks.forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        const file = link.dataset.file;
-
-
-        fetch(file)
+    fetch(file)
 
         .then(response => {
 
             if (!response.ok) {
 
-                throw new Error("File not found");
+                throw new Error("Content not found");
 
             }
 
             return response.text();
 
         })
+
 
         .then(html => {
 
@@ -94,6 +86,7 @@ contentLinks.forEach(link => {
             showDetails();
 
         })
+
 
         .catch(error => {
 
@@ -104,24 +97,31 @@ contentLinks.forEach(link => {
 
         });
 
-    });
-
-});
+}
 
 
-// ----------------------------
-// External menu links
-// ----------------------------
 
-const externalLinks = document.querySelectorAll(".external-link");
+// All internal content links
+
+const contentLinks = document.querySelectorAll(".load-content");
 
 
-externalLinks.forEach(link => {
+contentLinks.forEach(link => {
+
 
     link.addEventListener("click", event => {
 
-        event.stopPropagation();
+
+        event.preventDefault();
+
+
+        const file = link.dataset.file;
+
+
+        loadContent(file);
+
 
     });
+
 
 });
