@@ -1,70 +1,62 @@
 const layout = document.querySelector(".layout");
 
-const panels = {
 
-    person: document.getElementById("person-panel"),
-    works: document.getElementById("works-panel"),
-    details: document.getElementById("details-panel")
-
-};
+const personPanel = document.getElementById("person-panel");
+const detailsPanel = document.getElementById("details-panel");
 
 const detailsContent = document.getElementById("details-content");
 
 
 // ----------------------------
-// Active Panel
+// Layout switching
 // ----------------------------
 
-function activatePanel(panel) {
 
-    layout.classList.remove(
-        "person-active",
-        "works-active",
-        "details-active"
-    );
+function openDetails() {
 
-    Object.values(panels).forEach(p =>
-        p.classList.remove("active")
-    );
-
-    layout.classList.add(panel + "-active");
-
-    panels[panel].classList.add("active");
+    layout.classList.add("details-active");
 
 }
 
 
-// default
+function openPerson() {
 
-activatePanel("works");
+    layout.classList.remove("details-active");
+
+}
 
 
-// click on panels
 
-panels.person.addEventListener("click", () => {
+// Startzustand
 
-    activatePanel("person");
+openPerson();
+
+
+// Klick auf Person
+
+personPanel.addEventListener("click", () => {
+
+    openPerson();
 
 });
 
-panels.works.addEventListener("click", () => {
 
-    activatePanel("works");
+// Klick auf Details
 
-});
+detailsPanel.addEventListener("click", () => {
 
-panels.details.addEventListener("click", () => {
-
-    activatePanel("details");
+    openDetails();
 
 });
 
 
 // ----------------------------
-// Load content into Details
+// Load blog/content
 // ----------------------------
+
 
 const links = document.querySelectorAll(".load-content");
+
 
 links.forEach(link => {
 
@@ -72,26 +64,31 @@ links.forEach(link => {
 
         event.preventDefault();
 
-        activatePanel("details");
 
-        fetch(link.dataset.file)
+        const file = link.dataset.file;
 
-            .then(response => response.text())
 
-            .then(html => {
+        fetch(file)
 
-                detailsContent.innerHTML = html;
+        .then(response => response.text())
 
-            })
+        .then(html => {
 
-            .catch(() => {
+            detailsContent.innerHTML = html;
 
-                detailsContent.innerHTML = `
-                    <h2>Error</h2>
-                    <p>Could not load content.</p>
-                `;
+            openDetails();
 
-            });
+        })
+
+
+        .catch(() => {
+
+            detailsContent.innerHTML = `
+                <h2>Error</h2>
+                <p>Content could not be loaded.</p>
+            `;
+
+        });
 
     });
 
